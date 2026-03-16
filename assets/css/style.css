@@ -31,3 +31,7 @@ nav a {
     font-weight: 100;
     margin: auto;
 }
+
+body {
+    background-color: rgb(172, 201, 215);
+}
