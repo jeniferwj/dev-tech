@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevTech</title>
 
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background: #ffffff;
     }
 
     /* MENU */
@@ -39,7 +43,7 @@
     }
 
     .hero h1 {
-      font-size: 40px;
+      font-size: 38px;
       margin-bottom: 10px;
     }
 
@@ -48,24 +52,49 @@
       font-size: 18px;
     }
 
-    /* CONTEÚDO */
-    .container {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-      text-align: justify;
-    }
-
-    /* BOTÃO */
     .btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 12px 25px;
       background: white;
       color: #2E7D32;
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
+    }
+
+    /* CONTEÚDO */
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* BLOCOS COM ÍCONE */
+    .bloco {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .icone {
+      font-size: 28px;
+      color: #2E7D32;
+      margin-top: 5px;
+    }
+
+    .bloco h3 {
+      margin: 0 0 5px 0;
+    }
+
+    .bloco p {
+      margin: 0;
+      line-height: 1.6;
+      text-align: justify;
     }
 
     /* RODAPÉ */
@@ -100,27 +129,59 @@
     <a href="#" class="btn">Inscreva-se</a>
   </section>
 
-  <!-- TEXTO -->
+  <!-- CONTEÚDO -->
   <div class="container">
-    <p>
-      Vivemos em uma era em que a Inteligência Artificial está transformando rapidamente a forma como consumimos informação e desenvolvemos tecnologia. Pensando nisso, este evento foi criado para promover conhecimento, consciência digital e capacitação prática.
-    </p>
 
-    <p>
-      Durante o encontro, especialistas irão apresentar palestras sobre conscientização em Inteligência Artificial, abordando temas importantes como o impacto da IA no dia a dia e como identificar imagens e vídeos falsos (deepfakes), um dos grandes desafios da informação na internet atualmente.
-    </p>
+    <div class="bloco">
+      <span class="icone"><i class="fas fa-robot"></i></span>
+      <div>
+        <h3>O impacto da Inteligência Artificial</h3>
+        <p>
+          Vivemos em uma era em que a Inteligência Artificial está transformando rapidamente a forma como consumimos informação e desenvolvemos tecnologia. Pensando nisso, este evento foi criado para promover conhecimento, consciência digital e capacitação prática.
+        </p>
+      </div>
+    </div>
 
-    <p>
-      Além das palestras, o evento contará com um workshop prático de desenvolvimento de aplicativos mobile, onde os participantes terão a oportunidade de aprender conceitos e técnicas para criar aplicativos para Android e iOS, explorando ferramentas modernas e boas práticas de desenvolvimento.
-    </p>
+    <div class="bloco">
+      <span class="icone"><i class="fas fa-microphone"></i></span>
+      <div>
+        <h3>Palestras e conscientização</h3>
+        <p>
+          Durante o encontro, especialistas irão apresentar palestras sobre conscientização em Inteligência Artificial, abordando temas importantes como o impacto da IA no dia a dia e como identificar imagens e vídeos falsos (deepfakes), um dos grandes desafios da informação na internet atualmente.
+        </p>
+      </div>
+    </div>
 
-    <p>
-      O objetivo é unir educação tecnológica, pensamento crítico e prática, preparando os participantes tanto para compreender os riscos e oportunidades da IA quanto para desenvolver suas próprias soluções tecnológicas.
-    </p>
+    <div class="bloco">
+      <span class="icone"><i class="fas fa-mobile-alt"></i></span>
+      <div>
+        <h3>Workshop prático</h3>
+        <p>
+          Além das palestras, o evento contará com um workshop prático de desenvolvimento de aplicativos mobile, onde os participantes terão a oportunidade de aprender conceitos e técnicas para criar aplicativos para Android e iOS, explorando ferramentas modernas e boas práticas de desenvolvimento.
+        </p>
+      </div>
+    </div>
 
-    <p>
-      Este evento é ideal para estudantes, desenvolvedores, profissionais de tecnologia e qualquer pessoa interessada em inovação digital.
-    </p>
+    <div class="bloco">
+      <span class="icone"><i class="fas fa-bullseye"></i></span>
+      <div>
+        <h3>Objetivo do evento</h3>
+        <p>
+          O objetivo é unir educação tecnológica, pensamento crítico e prática, preparando os participantes tanto para compreender os riscos e oportunidades da IA quanto para desenvolver suas próprias soluções tecnológicas.
+        </p>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <span class="icone"><i class="fas fa-rocket"></i></span>
+      <div>
+        <h3>Para quem é o evento</h3>
+        <p>
+          Este evento é ideal para estudantes, desenvolvedores, profissionais de tecnologia e qualquer pessoa interessada em inovação digital.
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <!-- RODAPÉ -->
