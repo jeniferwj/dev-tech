@@ -23,17 +23,30 @@ nav a:hover {
   color: #4CAF50;
 }
 
-/* HERO */
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
-  text-align: center;
-  padding: 80px 20px;
+  gap: 30px;
+}
+
+/* TEXTO */
+.hero-text {
+  max-width: 500px;
 }
 
 .hero h1 {
   font-size: 38px;
   margin-bottom: 10px;
+}
+
+/* IMAGEM */
+.hero-img img {
+  max-width: 400px;
+  width: 100%;
 }
 
 .info {
