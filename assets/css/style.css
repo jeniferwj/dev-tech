@@ -146,5 +146,20 @@ input, select, textarea {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px; /* menos espaço entre opções */
+}
+/* Cada opção */
+.grupo label {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* espaço pequeno entre botão e texto */
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Ajuste fino do input */
+.grupo input[type="radio"],
+.grupo input[type="checkbox"] {
+  width: auto;
+  margin: 0;
 }
