@@ -94,3 +94,64 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+/* CENTRALIZAR TUDO */
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* TÍTULOS */
+.form-container h1 {
+  text-align: center;
+}
+
+.info-evento {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* FORMULÁRIO */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* INPUTS */
+input, select, textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* GRUPOS (radio e checkbox) */
+.grupo {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* BOTÃO */
+.btn {
+  margin-top: 20px;
+  background: #2E7D32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #1b5e20;
+}
