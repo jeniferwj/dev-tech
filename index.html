@@ -1,33 +1,132 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>DevTech</title>
-    </head>
-    <body>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTech</title>
 
-        <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        <nav>
-            <a href="index.html">Início</a> |
-            <a href="cadastro.html">Cadastro</a> |
-            <a href="eventos.html">Eventos</a>
-        </nav>
+    /* MENU */
+    nav {
+      background: #111;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
 
-        <img src="assets/img/logo-dev.png" alt="Logo do Evento">
-        
-        <h1>DevTech - IA e Desenvolvimento Mobile</h1>
-        <p>Vivemos em uma era em que a Inteligência Artificial está transformando rapidamente a forma como consumimos informação e desenvolvemos tecnologia. Pensando nisso, 
-    este evento foi criado para promover conhecimento, consciência digital e capacitação prática.</p>
-        <p>Durante o encontro, especialistas irão apresentar palestras sobre conscientização em Inteligência Artificial, abordando temas importantes como o impacto da IA no dia a dia 
-    e como identificar imagens e vídeos falsos (deepfakes), um dos grandes desafios da informação na internet atualmente.</p>
-        <p>Além das palestras, o evento contará com um workshop prático de desenvolvimento de aplicativos mobile, onde os participantes terão a oportunidade de aprender conceitos 
-    e técnicas para criar aplicativos para Android e iOS, explorando ferramentas modernas e boas práticas de desenvolvimento.</p>
-        <p>O objetivo é unir educação tecnológica, pensamento crítico e prática, preparando os participantes tanto para compreender os riscos e oportunidades da IA quanto para 
-    desenvolver suas próprias soluções tecnológicas.</p>
-        <p>Este evento é ideal para estudantes, desenvolvedores, profissionais de tecnologia e qualquer pessoa interessada em inovação digital.</p></p>
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        </nav>
-    </body>
+    nav a:hover {
+      color: #4CAF50;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(45deg, #4CAF50, #2E7D32);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    /* CONTEÚDO */
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      text-align: justify;
+    }
+
+    /* BOTÃO */
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: white;
+      color: #2E7D32;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* RODAPÉ */
+    footer {
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Cadastro</a>
+    <a href="#">Eventos</a>
+  </nav>
+
+  <!-- TOPO -->
+  <section class="hero">
+    <h1>DevTech - IA e Desenvolvimento Mobile</h1>
+
+    <div class="info">
+      📅 23/07/2026 <br>
+      📍 Teatro Colégio Londrinense - Londrina/PR
+    </div>
+
+    <a href="#" class="btn">Inscreva-se</a>
+  </section>
+
+  <!-- TEXTO -->
+  <div class="container">
+    <p>
+      Vivemos em uma era em que a Inteligência Artificial está transformando rapidamente a forma como consumimos informação e desenvolvemos tecnologia. Pensando nisso, este evento foi criado para promover conhecimento, consciência digital e capacitação prática.
+    </p>
+
+    <p>
+      Durante o encontro, especialistas irão apresentar palestras sobre conscientização em Inteligência Artificial, abordando temas importantes como o impacto da IA no dia a dia e como identificar imagens e vídeos falsos (deepfakes), um dos grandes desafios da informação na internet atualmente.
+    </p>
+
+    <p>
+      Além das palestras, o evento contará com um workshop prático de desenvolvimento de aplicativos mobile, onde os participantes terão a oportunidade de aprender conceitos e técnicas para criar aplicativos para Android e iOS, explorando ferramentas modernas e boas práticas de desenvolvimento.
+    </p>
+
+    <p>
+      O objetivo é unir educação tecnológica, pensamento crítico e prática, preparando os participantes tanto para compreender os riscos e oportunidades da IA quanto para desenvolver suas próprias soluções tecnológicas.
+    </p>
+
+    <p>
+      Este evento é ideal para estudantes, desenvolvedores, profissionais de tecnologia e qualquer pessoa interessada em inovação digital.
+    </p>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    © 2026 DevTech
+  </footer>
+
+</body>
 </html>
-
