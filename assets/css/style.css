@@ -1,37 +1,96 @@
-h1 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 35px;
-    text-align: center;
-    color: rgb(92, 5, 173);
-    margin-top:auto ;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
 }
 
-
-p {
-    font-size: 20px;
-    text-align: center;
-    color: rgb(37, 8, 64);
-    line-height: 1.6;
-}
-
-img {
-    display:block;
-    margin:auto;
-    width:500px;
-}
-
+/* MENU */
 nav {
-    text-align: center;
-    margin-top: auto;
+  background: #111;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
 nav a {
-    text-decoration:rgb(46, 16, 135);
-    color: rgb(92, 5, 173);
-    font-weight: 100;
-    margin: auto;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-body {
-    background-color: rgb(172, 201, 215);
+nav a:hover {
+  color: #4CAF50;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(45deg, #4CAF50, #2E7D32);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: white;
+  color: #2E7D32;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* CONTEÚDO */
+.container {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* BLOCOS */
+.bloco {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.icone {
+  font-size: 28px;
+  color: #2E7D32;
+  margin-top: 5px;
+}
+
+.bloco h3 {
+  margin: 0 0 5px 0;
+}
+
+.bloco p {
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  background: #111;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
 }

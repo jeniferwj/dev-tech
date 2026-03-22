@@ -1,0 +1,37 @@
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    text-align: center;
+    color: rgb(92, 5, 173);
+    margin-top:auto ;
+}
+
+
+p {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(37, 8, 64);
+    line-height: 1.6;
+}
+
+img {
+    display:block;
+    margin:auto;
+    width:500px;
+}
+
+nav {
+    text-align: center;
+    margin-top: auto;
+}
+
+nav a {
+    text-decoration:rgb(46, 16, 135);
+    color: rgb(92, 5, 173);
+    font-weight: 100;
+    margin: auto;
+}
+
+body {
+    background-color: rgb(172, 201, 215);
+}
