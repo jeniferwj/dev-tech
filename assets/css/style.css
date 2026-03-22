@@ -182,3 +182,17 @@ input, select, textarea {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+
+.hero2 {
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  align-items: center;     /* centraliza vertical */
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(45deg, #4CAF50, #2E7D32);
+  color: white;
+}
+
+.hero2-text {
+  max-width: 600px;
+}
