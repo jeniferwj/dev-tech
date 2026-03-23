@@ -1,19 +1,7 @@
-/* RESET + FONTE MODERNA */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
   background: #ffffff;
-}
-
-/* TIPOGRAFIA */
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: -0.5px;
-}
-
-p {
-  font-weight: 300;
-  color: #444;
 }
 
 /* MENU */
@@ -28,8 +16,7 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -64,14 +51,17 @@ nav a:hover {
   max-width: 400px;
   width: 100%;
   border-radius: 0px;
+
 }
 
+/* ========================= */
 /* INFO PADRÃO (INDEX) */
+/* ========================= */
 .info {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* 🔥 mantém alinhado à esquerda */
   gap: 12px;
 }
 
@@ -90,11 +80,9 @@ nav a:hover {
   padding: 14px 28px;
   background: white;
   color: #2E7D32;
-  border-radius: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  border-radius: 8px;
+  font-weight: bold;
   align-self: flex-start;
-  transition: 0.3s;
 }
 
 .btn:hover {
@@ -102,7 +90,9 @@ nav a:hover {
   color: white;
 }
 
+/* ========================= */
 /* HERO EVENTOS (CENTRALIZADO) */
+/* ========================= */
 .hero-geral {
   display: flex;
   flex-direction: column;
@@ -120,21 +110,24 @@ nav a:hover {
   margin: auto;
 }
 
-/* INFO CENTRALIZADA (EVENTOS/CADASTRO) */
+/* 🔥 INFO CENTRALIZADA SÓ EM EVENTOS */
 .hero-geral .info {
   align-items: center;
 }
 
+/* mantém alinhamento interno correto */
 .hero-geral .info-item {
   justify-content: flex-start;
-  display: flex;
+    display: flex;
   align-items: center;
   gap: 12px;
   width: 100%;
   max-width: 500px;
 }
 
+/* ========================= */
 /* CONTEÚDO */
+/* ========================= */
 .container {
   padding: 60px 20px;
   max-width: 1000px;
@@ -170,7 +163,7 @@ nav a:hover {
   text-align: justify;
 }
 
-/* ÍCONES PADRONIZADOS */
+/* ÍCONES */
 .icone {
   min-width: 45px;
   height: 45px;
@@ -218,7 +211,7 @@ form {
 
 label {
   margin-top: 15px;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 input, select, textarea {
@@ -226,17 +219,16 @@ input, select, textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .grupo {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .grupo label {
