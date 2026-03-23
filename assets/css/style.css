@@ -23,6 +23,7 @@ nav a:hover {
   color: #4ca851;
 }
 
+/* HERO (INDEX) */
 .hero {
   display: flex;
   align-items: center;
@@ -31,8 +32,9 @@ nav a:hover {
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
   gap: 40px;
-  flex-wrap: wrap; /* responsivo */
+  flex-wrap: wrap;
 }
+
 /* TEXTO */
 .hero-text {
   max-width: 500px;
@@ -44,27 +46,23 @@ nav a:hover {
   line-height: 1.2;
 }
 
-.bloco h3 {
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  color: #1b5e20;
-}
-
 /* IMAGEM */
 .hero-img img {
   max-width: 400px;
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+/* ========================= */
+/* INFO PADRÃO (INDEX) */
+/* ========================= */
 .info {
-    margin-top: 25px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 🔥 CENTRALIZA O BLOCO */
+  align-items: flex-start; /* 🔥 mantém alinhado à esquerda */
   gap: 12px;
-
-
-  
 }
 
 .info-item {
@@ -73,10 +71,9 @@ nav a:hover {
   gap: 12px;
   width: 100%;
   max-width: 350px;
-  justify-content: flex-start;
-
 }
 
+/* BOTÃO */
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -85,8 +82,7 @@ nav a:hover {
   color: #2E7D32;
   border-radius: 8px;
   font-weight: bold;
-  
-  align-self: flex-start; /* 🔥 ESSENCIAL */
+  align-self: flex-start;
 }
 
 .btn:hover {
@@ -94,7 +90,39 @@ nav a:hover {
   color: white;
 }
 
+/* ========================= */
+/* HERO EVENTOS (CENTRALIZADO) */
+/* ========================= */
+.hero-geral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(45deg, #4CAF50, #2E7D32);
+  color: white;
+  gap: 20px;
+}
+
+.hero-geral .hero-text {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* 🔥 INFO CENTRALIZADA SÓ EM EVENTOS */
+.hero-geral .info {
+  align-items: center;
+}
+
+/* mantém alinhamento interno correto */
+.hero-geral .info-item {
+  justify-content: flex-start;
+}
+
+/* ========================= */
 /* CONTEÚDO */
+/* ========================= */
 .container {
   padding: 60px 20px;
   max-width: 1000px;
@@ -118,6 +146,19 @@ nav a:hover {
   transform: translateY(-5px);
 }
 
+.bloco h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1b5e20;
+}
+
+.bloco p {
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ÍCONES */
 .icone {
   min-width: 45px;
   height: 45px;
@@ -128,15 +169,6 @@ nav a:hover {
   justify-content: center;
   border-radius: 12px;
   font-size: 18px;
-}
-.bloco h3 {
-  margin: 0 0 5px 0;
-}
-
-.bloco p {
-  margin: 0;
-  line-height: 1.6;
-  text-align: justify;
 }
 
 /* RODAPÉ */
@@ -167,7 +199,6 @@ footer {
   margin-bottom: 20px;
 }
 
-
 form {
   display: flex;
   flex-direction: column;
@@ -192,46 +223,19 @@ input, select, textarea {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 2px; /* menos espaço entre opções */
+  gap: 2px;
 }
-/* Cada opção */
+
 .grupo label {
   display: flex;
   align-items: center;
-  gap: 6px; /* espaço pequeno entre botão e texto */
+  gap: 6px;
   font-weight: normal;
   margin: 0;
 }
 
-/* Ajuste fino do input */
 .grupo input[type="radio"],
 .grupo input[type="checkbox"] {
   width: auto;
   margin: 0;
-}
-.hero-img img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.hero-geral {
-
-
-  display: flex;
-  flex-direction: column; /* empilha */
-  align-items: center;   /* centraliza horizontal */
-  justify-content: center; /* centraliza vertical */
-  text-align: center;
-  padding: 30px 20px;
-  background: linear-gradient(45deg, #4CAF50, #2E7D32);
-  color: white;
-  gap: 20px;
-}
-
-.hero-geral .hero-text {
-  max-width: 500px; /* controla a largura */
-
-  margin: auto;
 }
