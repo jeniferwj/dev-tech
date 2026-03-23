@@ -58,15 +58,16 @@ nav a:hover {
 
 .info {
   margin-top: 20px;
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: center;
-  margin-bottom: 8px;
+  justify-content: flex-start; /* alinhado à esquerda */
 }
 
 /* BOTÕES GERAIS */
@@ -210,12 +211,11 @@ input, select, textarea {
 
 .hero-eventos {
   justify-content: center;
-  align-items: center;
   text-align: center;
-  flex-direction: column; /* força ficar centralizado bonito */
+  padding: 60px 20px;
 }
 
-
 .hero-eventos .hero-text {
-  max-width: 600px;
+  max-width: 500px; /* controla a largura */
+  margin: auto;
 }
