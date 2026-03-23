@@ -216,6 +216,6 @@ input, select, textarea {
 }
 
 .hero-eventos .hero-text {
-  max-width: 500px; /* controla a largura */
+  max-width: 300px; /* controla a largura */
   margin: auto;
 }
