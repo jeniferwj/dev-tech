@@ -28,7 +28,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 30px 60px;
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
   gap: 40px;
@@ -48,7 +48,7 @@ nav a:hover {
 
 /* IMAGEM */
 .hero-img img {
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
   border-radius: 0px;
 
