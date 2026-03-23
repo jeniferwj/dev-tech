@@ -1,4 +1,3 @@
 function mensagem() {
-    alert("Cadastro realizado com sucesso!");
-    return false;
+    alert("Inscrição realizada com sucesso.");
 }
