@@ -57,17 +57,20 @@ nav a:hover {
 }
 
 .info {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* centraliza o bloco todo */
+  gap: 12px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  justify-content: flex-start; /* alinhado à esquerda */
+  gap: 12px;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 350px; /* controla largura */
 }
 
 /* BOTÕES GERAIS */
