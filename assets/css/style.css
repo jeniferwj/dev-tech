@@ -27,7 +27,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 40px;
+  padding: 30px 20px;
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
   gap: 40px;
@@ -218,7 +218,7 @@ input, select, textarea {
   align-items: center;   /* centraliza horizontal */
   justify-content: center; /* centraliza vertical */
   text-align: center;
-  padding: 80px 40px;
+  padding: 30px 20px;
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
   gap: 20px;
