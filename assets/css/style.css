@@ -57,11 +57,14 @@ nav a:hover {
 }
 
 .info {
-  margin-top: 25px;
+    margin-top: 25px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 🔥 muda aqui */
+  align-items: center; /* 🔥 CENTRALIZA O BLOCO */
   gap: 12px;
+
+
+  
 }
 
 .info-item {
