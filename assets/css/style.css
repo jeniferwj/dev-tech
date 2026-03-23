@@ -60,7 +60,7 @@ nav a:hover {
   margin-top: 25px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza o bloco todo */
+  align-items: flex-start; /* 🔥 muda aqui */
   gap: 12px;
 }
 
@@ -68,22 +68,20 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  justify-content: flex-start;
   width: 100%;
-  max-width: 350px; /* controla largura */
+  max-width: 350px;
 }
 
-/* BOTÕES GERAIS */
 .btn {
   display: inline-block;
   margin-top: 25px;
   padding: 14px 28px;
   background: white;
   color: #2E7D32;
-  text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: 0.3s;
+  
+  align-self: flex-start; /* 🔥 ESSENCIAL */
 }
 
 .btn:hover {
