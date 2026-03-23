@@ -210,13 +210,21 @@ input, select, textarea {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.hero-eventos {
-  justify-content: center;
+.hero-geral {
+
+
+  display: flex;
+  flex-direction: column; /* empilha */
+  align-items: center;   /* centraliza horizontal */
+  justify-content: center; /* centraliza vertical */
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 40px;
+  background: linear-gradient(45deg, #4CAF50, #2E7D32);
+  color: white;
+  gap: 20px;
 }
 
-.hero-eventos .hero-text {
+.hero-geral .hero-text {
   max-width: 300px; /* controla a largura */
   margin: auto;
 }
