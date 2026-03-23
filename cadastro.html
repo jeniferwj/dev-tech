@@ -6,48 +6,40 @@
     <title>DevTech - Cadastro</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Ícones (Font Awesome) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <nav>
+      <a href="index.html">Início</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="eventos.html">Eventos</a>
+  </nav>
 
-<nav>
-    <a href="index.html">Início</a>
-    <a href="cadastro.html">Cadastro</a>
-    <a href="eventos.html">Eventos</a>
-</nav>
+  <section class="hero hero-geral">
+    <div class="hero-text">
+      <h1>Inscrição para o Evento</h1>
 
-<section class="hero hero-geral">
-  <div class="hero-text">
-    <h1>Inscrição para o Evento</h1>
+      <div class="info">
+        <div class="info-item">
+          <span class="icone"><i class="fas fa-calendar-alt"></i></span>
+          23/07/2026
+        </div>
 
-    <div class="info">
+        <div class="info-item">
+          <span class="icone"><i class="fas fa-map-marker-alt"></i></span>
+          Teatro Colégio Londrinense - Londrina/PR
+        </div>
 
-      <div class="info-item">
-        <span class="icone"><i class="fas fa-calendar-alt"></i></span>
-        23/07/2026
       </div>
-
-      <div class="info-item">
-        <span class="icone"><i class="fas fa-map-marker-alt"></i></span>
-        Teatro Colégio Londrinense - Londrina/PR
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="form-container">
-
+  <div class="form-container">
     <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
 
-
-
     <form>
-
         <label>Nome completo:</label>
         <input type="text" name="nome" required>
 
@@ -90,9 +82,8 @@
         <input type="submit" value="Confirmar inscrição" class="btn">
 
     </form>
+  </div>
 
-</div>
-  <!-- RODAPÉ -->
   <footer>
     © 2026 DevTech
   </footer>
