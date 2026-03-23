@@ -6,7 +6,7 @@ body {
 
 /* MENU */
 nav {
-  background: #353535;
+  background: #615f5f;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -179,7 +179,7 @@ nav a:hover {
 /* RODAPÉ */
 footer {
   text-align: center;
-  background: #353535;
+  background: #615f5f;
   color: white;
   padding: 20px;
   margin-top: 40px;
