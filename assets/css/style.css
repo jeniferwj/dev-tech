@@ -27,20 +27,27 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 40px;
+  padding: 80px 40px;
   background: linear-gradient(45deg, #4CAF50, #2E7D32);
   color: white;
-  gap: 30px;
+  gap: 40px;
+  flex-wrap: wrap; /* responsivo */
 }
-
 /* TEXTO */
 .hero-text {
   max-width: 500px;
 }
 
 .hero h1 {
-  font-size: 38px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.bloco h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1b5e20;
 }
 
 /* IMAGEM */
@@ -54,18 +61,25 @@ nav a:hover {
   font-size: 18px;
 }
 
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
 /* BOTÕES GERAIS */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 25px;
+  padding: 14px 28px;
   background: white;
   color: #2E7D32;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: bold;
-  border: none;
-  cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -75,8 +89,8 @@ nav a:hover {
 
 /* CONTEÚDO */
 .container {
-  padding: 40px;
-  max-width: 900px;
+  padding: 60px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -86,17 +100,28 @@ nav a:hover {
   align-items: flex-start;
   gap: 15px;
   margin-bottom: 25px;
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.bloco:hover {
+  transform: translateY(-5px);
 }
 
 .icone {
-  font-size: 28px;
+  min-width: 45px;
+  height: 45px;
+  background: #e8f5e9;
   color: #2E7D32;
-  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 18px;
 }
-
 .bloco h3 {
   margin: 0 0 5px 0;
 }
@@ -119,11 +144,11 @@ footer {
 /* FORMULÁRIO */
 .form-container {
   max-width: 500px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 60px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .form-container h1 {
