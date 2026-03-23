@@ -39,7 +39,7 @@
   <div class="form-container">
     <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
 
-    <form>
+    <form onsubmit="mensagem()">
         <label>Nome completo:</label>
         <input type="text" name="nome">
 
@@ -79,7 +79,8 @@
         <label>Observações ou expectativas:</label>
         <textarea name="mensagem" rows="4"></textarea>
 
-        <button onclick="mensagem()">"Confirmar inscrição"</button>
+        <button type="submit">"Confirmar inscrição"</button>
+
 
 
     </form>
