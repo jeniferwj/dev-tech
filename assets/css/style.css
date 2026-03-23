@@ -1,11 +1,9 @@
-/* RESET + FONTE MODERNA */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
 }
 
-/* TIPOGRAFIA */
 h1, h2, h3 {
   font-weight: 600;
   letter-spacing: -0.5px;
@@ -16,7 +14,6 @@ p {
   color: #444;
 }
 
-/* MENU */
 nav {
   background: #615f5f;
   padding: 15px;
@@ -36,7 +33,6 @@ nav a:hover {
   color: #4ca851;
 }
 
-/* HERO (INDEX) */
 .hero {
   display: flex;
   align-items: center;
@@ -48,7 +44,6 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-/* TEXTO */
 .hero-text {
   max-width: 900px;
 }
@@ -59,14 +54,12 @@ nav a:hover {
   line-height: 1.2;
 }
 
-/* IMAGEM */
 .hero-img img {
   max-width: 400px;
   width: 100%;
   border-radius: 0px;
 }
 
-/* INFO PADRÃO (INDEX) */
 .info {
   margin-top: 25px;
   display: flex;
@@ -83,7 +76,6 @@ nav a:hover {
   max-width: 900px;
 }
 
-/* BOTÃO */
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -102,7 +94,6 @@ nav a:hover {
   color: white;
 }
 
-/* HERO EVENTOS (CENTRALIZADO) */
 .hero-geral {
   display: flex;
   flex-direction: column;
@@ -120,7 +111,6 @@ nav a:hover {
   margin: auto;
 }
 
-/* INFO CENTRALIZADA (EVENTOS/CADASTRO) */
 .hero-geral .info {
   align-items: center;
 }
@@ -134,14 +124,12 @@ nav a:hover {
   max-width: 500px;
 }
 
-/* CONTEÚDO */
 .container {
   padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
-/* BLOCOS */
 .bloco {
   display: flex;
   align-items: flex-start;
@@ -170,7 +158,6 @@ nav a:hover {
   text-align: justify;
 }
 
-/* ÍCONES PADRONIZADOS */
 .icone {
   min-width: 45px;
   height: 45px;
@@ -183,7 +170,6 @@ nav a:hover {
   font-size: 18px;
 }
 
-/* RODAPÉ */
 footer {
   text-align: center;
   background: #615f5f;
@@ -192,7 +178,6 @@ footer {
   margin-top: 40px;
 }
 
-/* FORMULÁRIO */
 .form-container {
   max-width: 500px;
   margin: 60px auto;
