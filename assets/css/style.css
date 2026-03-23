@@ -70,7 +70,7 @@ nav a:hover {
   align-items: center;
   gap: 12px;
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
 }
 
 /* BOTÃO */
@@ -118,6 +118,11 @@ nav a:hover {
 /* mantém alinhamento interno correto */
 .hero-geral .info-item {
   justify-content: flex-start;
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 500px;
 }
 
 /* ========================= */
