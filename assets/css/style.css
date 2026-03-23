@@ -225,6 +225,7 @@ input, select, textarea {
 }
 
 .hero-geral .hero-text {
-  max-width: 300px; /* controla a largura */
+  max-width: 500px; /* controla a largura */
+
   margin: auto;
 }
