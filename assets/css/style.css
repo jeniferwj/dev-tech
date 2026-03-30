@@ -242,16 +242,9 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 8px;
-
   text-align: left;
   margin-top: 20px;
-
   flex-wrap: nowrap; 
-}
-
-.contador h2,
-.contador p {
-  margin: 0;
 }
 
 .tempo {
