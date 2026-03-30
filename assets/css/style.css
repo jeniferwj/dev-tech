@@ -94,17 +94,17 @@ nav a:hover {
   color: white;
 }
 
-.btnc {
+.btncont {
   display: flex;
+  justify-content: center;
+}
+
+.btnc {
   margin-top: 25px;
   padding: 14px 28px;
   background: white;
   color: #2E7D32;
   border-radius: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  align-self: center;
-  transition: 0.3s;
 }
 
 .btnc:hover {
