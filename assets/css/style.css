@@ -105,6 +105,10 @@ nav a:hover {
   background: #2E7D32;
   color: white;
   border-radius: 10px;
+    font-weight: 600;
+  letter-spacing: 0.5px;
+  align-self: flex-start;
+  transition: 0.3s;
 }
 
 .btnc:hover {
