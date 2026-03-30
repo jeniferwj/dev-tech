@@ -100,16 +100,16 @@ nav a:hover {
 }
 
 .btnc {
-  margin-top: 25px;
+  margin-top: 15px;
   padding: 14px 28px;
-  background: white;
-  color: #2E7D32;
+  background: #2E7D32;
+  color: white;
   border-radius: 10px;
 }
 
 .btnc:hover {
-  background: #1b5e20;
-  color: white;
+  background: white;
+  color:  #1b5e20;
 }
 
 .hero-geral {
