@@ -237,3 +237,15 @@ input, select, textarea {
   width: auto;
   margin: 0;
 }
+
+#contador {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+#tempo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff4d4d;
+}
