@@ -239,9 +239,14 @@ input, select, textarea {
 }
 
 .contador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   text-align: left;
-  font-family: Arial, sans-serif;
-  margin-top: 50px;
+  margin-top: 20px;
+
+  flex-wrap: nowrap; 
 }
 
 .contador h2,
