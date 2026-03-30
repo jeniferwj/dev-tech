@@ -238,13 +238,18 @@ input, select, textarea {
   margin: 0;
 }
 
-contador {
+.contador {
   text-align: left;
   font-family: Arial, sans-serif;
   margin-top: 50px;
 }
 
-tempo {
+.contador h2,
+.contador p {
+  margin: 0;
+}
+
+.tempo {
   font-size: 28px;
   font-weight: bold;
   }
