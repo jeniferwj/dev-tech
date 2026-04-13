@@ -21,18 +21,22 @@ setInterval(atualizarContador, 1000);
 
 atualizarContador();
 
-let outrosCheck = document.getElementById("outrosCheck");
-let outrosTexto = document.getElementById("outrosTexto");
+document.addEventListener("DOMContentLoaded", function () {
 
-outrosCheck.addEventListener("change", function () {
+    let outrosCheck = document.getElementById("outrosCheck");
+    let outrosTexto = document.getElementById("outrosTexto");
 
-    if (outrosCheck.checked) {
-        outrosTexto.disabled = false;
-        outrosTexto.required = true;
-    } else {
-        outrosTexto.disabled = true;
-        outrosTexto.required = false;
-        outrosTexto.value = "";
-    }
+    outrosCheck.addEventListener("change", function () {
+
+        if (outrosCheck.checked) {
+            outrosTexto.disabled = false;
+            outrosTexto.required = true;
+        } else {
+            outrosTexto.disabled = true;
+            outrosTexto.required = false;
+            outrosTexto.value = "";
+        }
+
+    });
 
 });
