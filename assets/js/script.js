@@ -1,17 +1,10 @@
-// TESTE DE CARREGAMENTO
-console.log("JS carregado");
-
-// ==============================
 // FUNÇÃO DE MENSAGEM
-// ==============================
 function mensagem() {
     alert("Inscrição realizada com sucesso.");
     return false; // impede envio do form (caso use onsubmit)
 }
 
-// ==============================
 // CONTADOR DO EVENTO
-// ==============================
 const dataEvento = new Date(2026, 7, 23, 19, 0, 0); 
 
 function atualizarContador() {
@@ -36,19 +29,11 @@ setInterval(atualizarContador, 1000);
 atualizarContador();
 
 
-// ==============================
 // CHECKBOX "OUTROS"
-// ==============================
 document.addEventListener("DOMContentLoaded", function () {
 
     let outrosCheck = document.getElementById("outrosCheck");
     let outrosTexto = document.getElementById("outrosTexto");
-
-    // segurança: evita erro se não existir na página
-    if (!outrosCheck || !outrosTexto) {
-        console.log("Elementos 'outros' não encontrados nesta página");
-        return;
-    }
 
     outrosCheck.addEventListener("change", function () {
 
