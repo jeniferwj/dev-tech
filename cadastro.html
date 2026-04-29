@@ -71,7 +71,7 @@
 
         <label>Qual atividade você tem mais interesse?</label>
         <div class="grupo">
-            <label><input type="radio" name="interesse" value="IA" required> Palestras sobre IA</label>
+            <label><input type="radio" name="interesse" value="IA"> Palestras sobre IA</label>
             <label><input type="radio" name="interesse" value="Mobile"> Workshop Mobile</label>
             <label><input type="radio" name="interesse" value="Ambos"> Ambos</label>
         </div>
@@ -92,7 +92,7 @@
 
         <!-- Config Formspree -->
         <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
-        <input type="hidden" name="_redirect" value="https://SEU-USUARIO.github.io/dev-tech/obrigado.html">
+        <input type="hidden" name="_redirect" value="https://jeniferwj.github.io/dev-tech/obrigado.html">
 
         <div class="btncont">
             <button type="submit" class="btnc" id="btnEnviar">
@@ -110,26 +110,10 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const outrosCheck = document.getElementById("outrosCheck");
-    const outrosTexto = document.getElementById("outrosTexto");
     const form = document.getElementById("formCadastro");
     const botao = document.getElementById("btnEnviar");
 
-    // Ativar/desativar campo "Outros"
-    if (outrosCheck && outrosTexto) {
-        outrosCheck.addEventListener("change", function () {
-            if (this.checked) {
-                outrosTexto.disabled = false;
-                outrosTexto.required = true;
-            } else {
-                outrosTexto.disabled = true;
-                outrosTexto.required = false;
-                outrosTexto.value = "";
-            }
-        });
-    }
-
-    // UX ao enviar
+        // UX ao enviar
     form.addEventListener("submit", function () {
         botao.disabled = true;
         botao.innerText = "Enviando...";
