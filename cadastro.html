@@ -46,7 +46,7 @@
 <div class="form-container">
     <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
 
-    <form id="formCadastro" action="https://formspree.io/f/xykogjvg" method="POST">
+    <form id="formCadastro">
 
         <label>Nome completo:</label>
         <input type="text" name="nome" required>
@@ -92,8 +92,6 @@
 
         <!-- Config Formspree -->
         <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
-        <input type="hidden" name="_redirect" value="https://jeniferwj.github.io/dev-tech/obrigado.html">
-        <input type="hidden" name="_format" value="json">
 
         <div class="btncont">
             <button type="submit" class="btnc" id="btnEnviar">
@@ -107,6 +105,43 @@
 <footer>
     © 2026 DevTech
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("formCadastro");
+    const botao = document.getElementById("btnEnviar");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        botao.disabled = true;
+        botao.innerText = "Enviando...";
+
+        const data = new FormData(form);
+
+        try {
+            const response = await fetch("https://formspree.io/f/xykogjvg", {
+                method: "POST",
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                window.location.href = "https://jeniferwj.github.io/dev-tech/obrigado.html";
+            } else {
+                throw new Error();
+            }
+
+        } catch {
+            alert("Erro ao enviar. Tente novamente.");
+            botao.disabled = false;
+            botao.innerText = "Confirmar Inscrição";
+        }
+    });
+
+});
+</script>
 
 </body>
 </html>
