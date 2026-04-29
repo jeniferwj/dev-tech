@@ -46,63 +46,97 @@
 <div class="form-container">
     <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
 
-    <form id="formCadastro">
+    <form id="formCadastro" action="https://formspree.io/f/xykogjvg" method="POST">
 
-    <label>Nome completo:</label>
-    <input type="text" name="nome" required>
+        <label>Nome completo:</label>
+        <input type="text" name="nome" required>
 
-    <label>Email:</label>
-    <input type="email" name="email" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
 
-    <label>CPF:</label>
-    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+        <label>Telefone:</label>
+        <input type="tel" name="telefone">
 
-    <label>Telefone:</label>
-    <input type="tel" name="telefone" id="telefone" placeholder="(00) 00000-0000">
+        <label>Data de nascimento:</label>
+        <input type="date" name="nascimento">
 
-    <label>Data de nascimento:</label>
-    <input type="date" name="nascimento">
+        <label>Área de atuação:</label>
+        <select name="area">
+            <option value="Estudante">Estudante</option>
+            <option value="Desenvolvedor">Desenvolvedor</option>
+            <option value="Profissional de TI">Profissional de TI</option>
+            <option value="Empreendedor">Empreendedor</option>
+            <option value="Outro">Outro</option>
+        </select>
 
-    <label>Área de atuação:</label>
-    <select name="area">
-        <option value="Estudante">Estudante</option>
-        <option value="Desenvolvedor">Desenvolvedor</option>
-        <option value="Profissional de TI">Profissional de TI</option>
-        <option value="Empreendedor">Empreendedor</option>
-        <option value="Outro">Outro</option>
-    </select>
+        <label>Qual atividade você tem mais interesse?</label>
+        <div class="grupo">
+            <label><input type="radio" name="interesse" value="IA" required> Palestras sobre IA</label>
+            <label><input type="radio" name="interesse" value="Mobile"> Workshop Mobile</label>
+            <label><input type="radio" name="interesse" value="Ambos"> Ambos</label>
+        </div>
 
-    <label>Interesse:</label>
-    <div class="grupo">
-        <label><input type="radio" name="interesse" value="IA" required> IA</label>
-        <label><input type="radio" name="interesse" value="Mobile"> Mobile</label>
-        <label><input type="radio" name="interesse" value="Ambos"> Ambos</label>
-    </div>
+        <label>Como ficou sabendo do evento?</label>
+        <div class="grupo">
+            <label><input type="checkbox" name="origem[]" value="instagram"> Instagram</label>
+            <label><input type="checkbox" name="origem[]" value="faculdade"> Faculdade / Escola</label>
+            <label><input type="checkbox" name="origem[]" value="amigos"> Amigos</label>
+            <label><input type="checkbox" name="origem[]" value="internet"> Internet</label>
+            <label><input type="checkbox" id="outrosCheck" name="origem[]" value="outros"> Outros</label>
+        </div>
 
-    <label>Como ficou sabendo?</label>
-    <div class="grupo">
-        <label><input type="checkbox" name="origem[]" value="instagram"> Instagram</label>
-        <label><input type="checkbox" name="origem[]" value="faculdade"> Faculdade</label>
-        <label><input type="checkbox" name="origem[]" value="amigos"> Amigos</label>
-        <label><input type="checkbox" name="origem[]" value="internet"> Internet</label>
-        <label><input type="checkbox" id="outrosCheck" value="outros"> Outros</label>
-    </div>
+        <input type="text" id="outrosTexto" name="outrosTexto" placeholder="Digite aqui" disabled>
 
-    <input type="text" id="outrosTexto" name="outrosTexto" placeholder="Digite aqui" disabled>
+        <label>Observações ou expectativas:</label>
+        <textarea name="mensagem" rows="4"></textarea>
 
-    <label>Mensagem:</label>
-    <textarea name="mensagem"></textarea>
+        <!-- Config Formspree -->
+        <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
+        <input type="hidden" name="_redirect" value="https://SEU-USUARIO.github.io/dev-tech/obrigado.html">
 
-    <button type="submit" id="btnEnviar">Confirmar Inscrição</button>
+        <div class="btncont">
+            <button type="submit" class="btnc" id="btnEnviar">
+                Confirmar Inscrição
+            </button>
+        </div>
 
-</form>
+    </form>
 </div>
 
 <footer>
     © 2026 DevTech
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const outrosCheck = document.getElementById("outrosCheck");
+    const outrosTexto = document.getElementById("outrosTexto");
+    const form = document.getElementById("formCadastro");
+    const botao = document.getElementById("btnEnviar");
+
+    // Ativar/desativar campo "Outros"
+    if (outrosCheck && outrosTexto) {
+        outrosCheck.addEventListener("change", function () {
+            if (this.checked) {
+                outrosTexto.disabled = false;
+                outrosTexto.required = true;
+            } else {
+                outrosTexto.disabled = true;
+                outrosTexto.required = false;
+                outrosTexto.value = "";
+            }
+        });
+    }
+
+    // UX ao enviar
+    form.addEventListener("submit", function () {
+        botao.disabled = true;
+        botao.innerText = "Enviando...";
+    });
+
+});
+</script>
 
 </body>
 </html>
