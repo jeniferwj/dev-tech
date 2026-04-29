@@ -45,7 +45,7 @@
   <div class="form-container">
     <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
 
-    <form action="salvar.php" method="POST">
+    <form action="https://formspree.io/f/xykogjvg" method="POST">
         <label>Nome completo:</label>
         <input type="text" name="nome">
 
