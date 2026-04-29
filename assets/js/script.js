@@ -49,3 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+const check = document.getElementById("outrosCheck");
+const campo = document.getElementById("outrosTexto");
+
+if (check) {
+    check.addEventListener("change", () => {
+        campo.disabled = !check.checked;
+    });
+}
