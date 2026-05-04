@@ -70,7 +70,7 @@ const supabaseClient = supabase.createClient(
         <input type="date" name="nascimento">
 
         <label>Área de atuação:</label>
-        <select name="area">
+        <select name="atuacao">
             <option value="Estudante">Estudante</option>
             <option value="Desenvolvedor">Desenvolvedor</option>
             <option value="Profissional de TI">Profissional de TI</option>
@@ -87,17 +87,17 @@ const supabaseClient = supabase.createClient(
 
         <label>Como ficou sabendo do evento?</label>
         <div class="grupo">
-            <label><input type="checkbox" name="origem[]" value="instagram"> Instagram</label>
-            <label><input type="checkbox" name="origem[]" value="faculdade"> Faculdade / Escola</label>
-            <label><input type="checkbox" name="origem[]" value="amigos"> Amigos</label>
-            <label><input type="checkbox" name="origem[]" value="internet"> Internet</label>
-            <label><input type="checkbox" id="outrosCheck" name="origem[]" value="outros"> Outros</label>
+            <label><input type="checkbox" name="fonte[]" value="instagram"> Instagram</label>
+            <label><input type="checkbox" name="fonte[]" value="faculdade"> Faculdade / Escola</label>
+            <label><input type="checkbox" name="fonte[]" value="amigos"> Amigos</label>
+            <label><input type="checkbox" name="fonte[]" value="internet"> Internet</label>
+            <label><input type="checkbox" id="outrosCheck" name="fonte[]" value="outros"> Outros</label>
         </div>
 
-        <input type="text" id="outrosTexto" name="outrosTexto" placeholder="Digite aqui" disabled>
+        <input type="text" id="outrosTexto" name="fonte_outros" placeholder="Digite aqui" disabled>
 
         <label>Observações ou expectativas:</label>
-        <textarea name="mensagem" rows="4"></textarea>
+        <textarea name="outros" rows="4"></textarea>
 
         <!-- Config Formspree -->
         <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
@@ -141,11 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
             email: formData.get("email"),
             telefone: formData.get("telefone"),
             nascimento: formData.get("nascimento"),
-            area: formData.get("area"),
+            atuacao: formData.get("area"),
             interesse: formData.get("interesse"),
-            origem: formData.getAll("origem[]").join(", "),
-            outros: formData.get("outrosTexto"),
-            mensagem: formData.get("mensagem")
+            fonte: formData.getAll("origem[]").join(", "),
+            fonte_outros: formData.get("outrosTexto"),
+            outros: formData.get("mensagem")
         };
 
         try {
