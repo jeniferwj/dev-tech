@@ -136,17 +136,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(form);
 
-        const dados = {
-            nome: formData.get("nome"),
-            email: formData.get("email"),
-            telefone: formData.get("telefone"),
-            nascimento: formData.get("nascimento"),
-            atuacao: formData.get("area"),
-            interesse: formData.get("interesse"),
-            fonte: formData.getAll("origem[]").join(", "),
-            fonte_outros: formData.get("outrosTexto"),
-            outros: formData.get("mensagem")
-        };
+const dados = {
+    nome: formData.get("nome"),
+    email: formData.get("email"),
+    telefone: formData.get("telefone"),
+    nascimento: formData.get("nascimento"),
+    atuacao: formData.get("atuacao"),
+    interesse: formData.get("interesse"),
+    fonte: formData.getAll("fonte[]").join(", "),
+    fonte_outros: formData.get("fonte_outros"),
+    outros: formData.get("outros")
+};
 
         try {
             const { error } = await supabaseClient
@@ -155,8 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (error) throw error;
 
-            alert("Cadastro realizado com sucesso!");
-            form.reset();
+            window.location.href = "obrigado.html";
 
         } catch (err) {
             console.error(err);
