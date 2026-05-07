@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fonte: formData.getAll("fonte[]").join(", "),
                     fonte_outros: formData.get("fonte_outros"),
                     outros: formData.get("outros")
+                    data: new Date().toISOString().split("T")[0]
                 };
 
                 try {
@@ -195,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         let mensagemErro = "Erro ao salvar inscrição.";
 
                         if (error.message.includes("duplicate key")) {
-                            mensagemErro = "Já existe uma inscrição com este email.";
+                            mensagemErro = "Já existe uma inscrição com este e-mail.";
                         }
 
                         alert(mensagemErro);
