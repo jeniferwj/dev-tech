@@ -223,11 +223,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
+
+const supabaseClient = supabase.createClient(
+    "https://chcshzruympfsqxqzfay.supabase.co",
+    "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
+);
+
 async function carregarInscritos() {
 
     const { data, error } = await supabaseClient
         .from("Cadastro")
         .select("*");
+
+    console.log(data);
+    console.log(error);
 
     if (error) {
 
@@ -239,6 +249,9 @@ async function carregarInscritos() {
     }
 
     const tabela = document.getElementById("tabelaInscritos");
+
+    // impede erro se a tabela não existir
+    if (!tabela) return;
 
     tabela.innerHTML = "";
 
@@ -254,11 +267,24 @@ async function carregarInscritos() {
         `;
     });
 
-    // total inscritos
-    document.getElementById("totalInscritos").innerText = data.length;
+    const totalInscritos = document.getElementById("totalInscritos");
 
-    // total áreas diferentes
-    const areas = [...new Set(data.map(i => i.atuacao))];
+    if (totalInscritos) {
+        totalInscritos.innerText = data.length;
+    }
 
-    document.getElementById("totalAreas").innerText = areas.length;
+    const totalAreas = document.getElementById("totalAreas");
+
+    if (totalAreas) {
+
+        const areas = [...new Set(data.map(i => i.atuacao))];
+
+        totalAreas.innerText = areas.length;
+    }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    carregarInscritos();
+
+});

@@ -90,52 +90,8 @@
     © 2026 DevTech
 </footer>
 
-<script>
 
-    async function carregarInscritos() {
-
-        const { data, error } = await supabaseClient
-            .from("Cadastro")
-            .select("*");
-
-        console.log(data);
-        console.log(error);
-
-        if (error) {
-
-            console.error(error);
-
-            alert(error.message);
-
-            return;
-        }
-
-        const tabela = document.getElementById("tabelaInscritos");
-
-        tabela.innerHTML = "";
-
-        data.forEach(inscrito => {
-
-            tabela.innerHTML += `
-                <tr>
-                    <td>${inscrito.nome ?? ""}</td>
-                    <td>${inscrito.email ?? ""}</td>
-                    <td>${inscrito.telefone ?? ""}</td>
-                    <td>${inscrito.atuacao ?? ""}</td>
-                </tr>
-            `;
-        });
-
-        document.getElementById("totalInscritos").innerText = data.length;
-
-        const areas = [...new Set(data.map(i => i.atuacao))];
-
-        document.getElementById("totalAreas").innerText = areas.length;
-    }
-
-    carregarInscritos();
-
-</script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
