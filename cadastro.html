@@ -133,7 +133,7 @@ const dados = {
     nome: formData.get("nome"),
     email: formData.get("email"),
     telefone: formData.get("telefone"),
-    nascimento: formData.get("nascimento"),
+    nascimento: formData.get("nascimento") || null,
     atuacao: formData.get("atuacao"),
     interesse: formData.get("interesse"),
     fonte: formData.getAll("fonte[]").join(", "),
