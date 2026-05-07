@@ -2,17 +2,12 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <title>Relatório de Inscritos</title>
 
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-    <script>
-        const supabaseClient = supabase.createClient(
-            "https://chcshzruympfsqxqzfay.supabase.co",
-            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-        );
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 </head>
 
@@ -24,7 +19,7 @@
 
         <thead>
             <tr>
-                <th>nome</th>
+                <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Área</th>
@@ -37,8 +32,6 @@
 
     <script>
 
-
-
         const supabaseClient = supabase.createClient(
             "https://chcshzruympfsqxqzfay.supabase.co",
             "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
@@ -49,6 +42,9 @@
             const { data, error } = await supabaseClient
                 .from("Cadastro")
                 .select("*");
+
+            console.log(data);
+            console.log(error);
 
             if (error) {
 
@@ -61,14 +57,16 @@
 
             const tabela = document.getElementById("tabelaInscritos");
 
+            tabela.innerHTML = "";
+
             data.forEach(inscrito => {
 
                 tabela.innerHTML += `
                     <tr>
-                        <td>${inscrito.nome}</td>
-                        <td>${inscrito.email}</td>
-                        <td>${inscrito.telefone}</td>
-                        <td>${inscrito.atuacao}</td>
+                        <td>${inscrito.nome ?? ""}</td>
+                        <td>${inscrito.email ?? ""}</td>
+                        <td>${inscrito.telefone ?? ""}</td>
+                        <td>${inscrito.atuacao ?? ""}</td>
                     </tr>
                 `;
             });
