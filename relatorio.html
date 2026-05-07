@@ -2,98 +2,106 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
-    <title>DevTech - Inscrição Confirmada</title>
+
+    <title>DevTech - Relatório</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-      <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-          <script>
-        const supabaseClient = supabase.createClient(
-            "https://chcshzruympfsqxqzfay.supabase.co",
-            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-        );
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 </head>
 
 <body>
 
-<nav>
-    <a href="index.html">Início</a>
-    <a href="cadastro.html">Cadastro</a>
-    <a href="eventos.html">Eventos</a>
-</nav>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="eventos.html">Eventos</a>
+    </nav>
 
-<section class="hero hero-geral">
-    <div class="hero-text">
-        <h1>Relatório de Inscritos</h1>
-    </div>
-</section>
+    <section class="hero hero-geral">
 
-<div class="dashboard-container">
+        <div class="hero-text">
 
-    <div class="dashboard-header">
+            <h1>Relatório de Inscritos</h1>
 
-        <h2>Dashboard de Inscrições</h2>
-
-        <p>
-            Acompanhe os participantes cadastrados no evento DevTech.
-        </p>
-
-    </div>
-
-    <div class="tabela-container">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Área</th>
-                </tr>
-            </thead>
-
-            <tbody id="tabelaInscritos"></tbody>
-
-        </table>
-
-    </div>
-
-    <div class="cards">
-
-        <div class="card-metrica">
-            <h3 id="totalInscritos">0</h3>
-            <span>Total de inscritos</span>
         </div>
 
-        <div class="card-metrica">
-            <h3 id="totalAreas">0</h3>
-            <span>Áreas diferentes</span>
+    </section>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <h2>Dashboard de Inscrições</h2>
+
+            <p>
+                Acompanhe os participantes cadastrados no evento DevTech.
+            </p>
+
         </div>
+
+        <div class="tabela-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Área</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaInscritos"></tbody>
+
+            </table>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card-metrica">
+
+                <h3 id="totalInscritos">0</h3>
+
+                <span>Total de inscritos</span>
+
+            </div>
+
+            <div class="card-metrica">
+
+                <h3 id="totalAreas">0</h3>
+
+                <span>Áreas diferentes</span>
+
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn-voltar">
+            Voltar para o início
+        </a>
 
     </div>
 
-    
+    <footer>
+        © 2026 DevTech
+    </footer>
 
-    <a href="index.html" class="btn-voltar">
-        Voltar para o início
-    </a>
-
-</div>
-
-<footer>
-    © 2026 DevTech
-</footer>
-
-
-<script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
+
 </html>
