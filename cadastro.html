@@ -120,13 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const form = document.getElementById("formCadastro");
     const botao = document.getElementById("btnEnviar");
-    const outrosCheck = document.getElementById("outrosCheck");
-    const outrosTexto = document.getElementById("outrosTexto");
-
-    // habilitar campo "outros"
-    outrosCheck.addEventListener("change", () => {
-        outrosTexto.disabled = !outrosCheck.checked;
-    });
 
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -150,10 +143,16 @@ const dados = {
 
         try {
             const { error } = await supabaseClient
-                .from("Cadastro") // ⚠️ CONFIRME o nome da tabela
+                .from("Cadastro")
                 .insert([dados]);
 
-            if (error) throw error;
+            if (error) {
+    console.error(error);
+
+    alert(error.message);
+
+    return;
+}
 
             window.location.href = "obrigado.html";
 
@@ -169,6 +168,6 @@ const dados = {
 });
 </script>
 
-
 </body>
+
 </html>
