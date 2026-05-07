@@ -135,82 +135,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ========================================
-    // MÁSCARA CPF
-    // ========================================
+// ========================================
+// MÁSCARA TELEFONE
+// ========================================
 
-    if (cpf) {
+if (telefone) {
 
-        cpf.addEventListener("input", function () {
+    telefone.addEventListener("input", function () {
 
-            let v = cpf.value
-                .replace(/\D/g, "")
-                .slice(0, 11);
+        let v = telefone.value
+            .replace(/\D/g, "")
+            .slice(0, 11);
 
-            v = v.replace(/(\d{3})(\d)/, "$1.$2");
+        // Coloca DDD
+        v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
 
-            v = v.replace(/(\d{3})(\d)/, "$1.$2");
-
-            v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-
-            cpf.value = v;
-
-        });
-
-    }
-
-
-    // ========================================
-    // VALIDAÇÃO CPF
-    // ========================================
-
-    function validarCPF(cpfValor) {
-
-        cpfValor = cpfValor.replace(/\D/g, "");
-
-        if (
-            cpfValor.length !== 11
-            ||
-            /^(\d)\1+$/.test(cpfValor)
-        ) {
-            return false;
+        // Celular: 11 dígitos
+        if (v.replace(/\D/g, "").length === 11) {
+            v = v.replace(/(\d{5})(\d{4})$/, "$1-$2");
         }
 
-        let soma = 0;
-
-        for (let i = 0; i < 9; i++) {
-
-            soma += parseInt(cpfValor[i]) * (10 - i);
-
+        // Fixo: 10 dígitos
+        else {
+            v = v.replace(/(\d{4})(\d{4})$/, "$1-$2");
         }
 
-        let resto = (soma * 10) % 11;
+        telefone.value = v;
 
-        if (resto === 10) {
-            resto = 0;
-        }
+    });
 
-        if (resto !== parseInt(cpfValor[9])) {
-            return false;
-        }
-
-        soma = 0;
-
-        for (let i = 0; i < 10; i++) {
-
-            soma += parseInt(cpfValor[i]) * (11 - i);
-
-        }
-
-        resto = (soma * 10) % 11;
-
-        if (resto === 10) {
-            resto = 0;
-        }
-
-        return resto === parseInt(cpfValor[10]);
-    }
-
+}
 
     // ========================================
     // FORMULÁRIO
@@ -221,16 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", async function (e) {
 
             e.preventDefault();
-
-            // valida CPF se existir
-            if (cpf && !validarCPF(cpf.value)) {
-
-                alert("CPF inválido!");
-
-                cpf.focus();
-
-                return;
-            }
 
             botao.disabled = true;
 
@@ -373,6 +317,9 @@ async function carregarInscritos() {
                 <td>${inscrito.email ?? ""}</td>
                 <td>${inscrito.telefone ?? ""}</td>
                 <td>${inscrito.atuacao ?? ""}</td>
+                <td>${inscrito.interesse ?? ""}</td>
+                <td>${inscrito.data ?? ""}</td>
+
             </tr>
         `;
 
