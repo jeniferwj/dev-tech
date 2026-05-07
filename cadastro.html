@@ -185,76 +185,9 @@
         © 2026 DevTech
     </footer>
 
-    <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const form = document.getElementById("formCadastro");
-            const botao = document.getElementById("btnEnviar");
-
-            form.addEventListener("submit", async function (e) {
-
-                e.preventDefault();
-
-                botao.disabled = true;
-                botao.innerText = "Enviando...";
-
-                const formData = new FormData(form);
-
-                const dados = {
-                    nome: formData.get("nome"),
-                    email: formData.get("email"),
-                    telefone: formData.get("telefone"),
-                    nascimento: formData.get("nascimento") || null,
-                    atuacao: formData.get("atuacao"),
-                    interesse: formData.get("interesse"),
-                    fonte: formData.getAll("fonte[]").join(", "),
-                    fonte_outros: formData.get("fonte_outros"),
-                    outros: formData.get("outros")
-                };
-
-                try {
-
-                    const { error } = await supabaseClient
-                        .from("Cadastro")
-                        .insert([dados]);
-
-                    if (error) {
-
-                        console.error(error);
-
-                        let mensagemErro = "Erro ao salvar inscrição.";
-
-                        if (error.message.includes("duplicate key")) {
-                            mensagemErro = "Já existe uma inscrição com este email.";
-                        }
-
-                        alert(mensagemErro);
-
-                        return;
-                    }
-
-                    window.location.href = "obrigado.html";
-
-                } catch (err) {
-
-                    console.error(err);
-
-                    alert("Erro ao salvar no banco.");
-
-                } finally {
-
-                    botao.disabled = false;
-                    botao.innerText = "Confirmar Inscrição";
-
-                }
-
-            });
-
-        });
-
-    </script>
-
+ <script src="assets/js/script.js"></script>
+ 
 </body>
 
 </html>
