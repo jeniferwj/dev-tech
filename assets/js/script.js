@@ -223,3 +223,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+async function carregarInscritos() {
+
+    const { data, error } = await supabaseClient
+        .from("Cadastro")
+        .select("*");
+
+    if (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+        return;
+    }
+
+    const tabela = document.getElementById("tabelaInscritos");
+
+    tabela.innerHTML = "";
+
+    data.forEach(inscrito => {
+
+        tabela.innerHTML += `
+            <tr>
+                <td>${inscrito.nome ?? ""}</td>
+                <td>${inscrito.email ?? ""}</td>
+                <td>${inscrito.telefone ?? ""}</td>
+                <td>${inscrito.atuacao ?? ""}</td>
+            </tr>
+        `;
+    });
+
+    // total inscritos
+    document.getElementById("totalInscritos").innerText = data.length;
+
+    // total áreas diferentes
+    const areas = [...new Set(data.map(i => i.atuacao))];
+
+    document.getElementById("totalAreas").innerText = areas.length;
+}
