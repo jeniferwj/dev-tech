@@ -149,7 +149,13 @@ const dados = {
             if (error) {
     console.error(error);
 
-    alert(error.message);
+    let mensagemErro = "Erro ao salvar inscrição.";
+
+if (error.message.includes("duplicate key")) {
+    mensagemErro = "Já existe uma inscrição com este email.";
+}
+
+mostrarMensagem(mensagemErro, "erro");
 
     return;
 }
