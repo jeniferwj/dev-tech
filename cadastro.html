@@ -6,8 +6,12 @@
     <title>DevTech - Cadastro</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         .btnc:disabled {
@@ -15,164 +19,241 @@
             cursor: not-allowed;
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <script>
+        const supabaseClient = supabase.createClient(
+            "https://chcshzruympfsqxqzfay.supabase.co",
+            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
+        );
+    </script>
+
 </head>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<script>
-const supabaseClient = supabase.createClient(
-  "https://chcshzruympfsqxqzfay.supabase.co",
-  "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-);
-</script>
 
 <body>
 
-<nav>
-    <a href="index.html">Início</a>
-    <a href="cadastro.html">Cadastro</a>
-    <a href="eventos.html">Eventos</a>
-</nav>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="eventos.html">Eventos</a>
+    </nav>
 
-<section class="hero hero-geral">
-    <div class="hero-text">
-        <h1>Inscrição para o Evento</h1>
+    <section class="hero hero-geral">
 
-        <div class="info">
-            <div class="info-item">
-                <span class="icone"><i class="fas fa-calendar-alt"></i></span>
-                23/07/2026
+        <div class="hero-text">
+
+            <h1>Inscrição para o Evento</h1>
+
+            <div class="info">
+
+                <div class="info-item">
+                    <span class="icone">
+                        <i class="fas fa-calendar-alt"></i>
+                    </span>
+
+                    23/07/2026
+                </div>
+
+                <div class="info-item">
+                    <span class="icone">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+
+                    Teatro Colégio Londrinense - Londrina/PR
+                </div>
+
             </div>
 
-            <div class="info-item">
-                <span class="icone"><i class="fas fa-map-marker-alt"></i></span>
-                Teatro Colégio Londrinense - Londrina/PR
-            </div>
         </div>
+
+    </section>
+
+    <div class="form-container">
+
+        <p>
+            Preencha o formulário abaixo para garantir sua participação no evento DevTech.
+        </p>
+
+        <form id="formCadastro">
+
+            <label>Nome completo:</label>
+            <input type="text" name="nome" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Telefone:</label>
+            <input type="tel" name="telefone">
+
+            <label>Data de nascimento:</label>
+            <input type="date" name="nascimento">
+
+            <label>Área de atuação:</label>
+
+            <select name="atuacao">
+                <option value="Estudante">Estudante</option>
+                <option value="Desenvolvedor">Desenvolvedor</option>
+                <option value="Profissional de TI">Profissional de TI</option>
+                <option value="Empreendedor">Empreendedor</option>
+                <option value="Outro">Outro</option>
+            </select>
+
+            <label>Qual atividade você tem mais interesse?</label>
+
+            <div class="grupo">
+
+                <label>
+                    <input type="radio" name="interesse" value="IA">
+                    Palestras sobre IA
+                </label>
+
+                <label>
+                    <input type="radio" name="interesse" value="Mobile">
+                    Workshop Mobile
+                </label>
+
+                <label>
+                    <input type="radio" name="interesse" value="Ambos">
+                    Ambos
+                </label>
+
+            </div>
+
+            <label>Como ficou sabendo do evento?</label>
+
+            <div class="grupo">
+
+                <label>
+                    <input type="checkbox" name="fonte[]" value="instagram">
+                    Instagram
+                </label>
+
+                <label>
+                    <input type="checkbox" name="fonte[]" value="faculdade">
+                    Faculdade / Escola
+                </label>
+
+                <label>
+                    <input type="checkbox" name="fonte[]" value="amigos">
+                    Amigos
+                </label>
+
+                <label>
+                    <input type="checkbox" name="fonte[]" value="internet">
+                    Internet
+                </label>
+
+                <label>
+                    <input type="checkbox" id="outrosCheck" name="fonte[]" value="outros">
+                    Outros
+                </label>
+
+            </div>
+
+            <input
+                type="text"
+                id="outrosTexto"
+                name="fonte_outros"
+                placeholder="Digite aqui"
+                disabled
+            >
+
+            <label>Observações ou expectativas:</label>
+
+            <textarea name="outros" rows="4"></textarea>
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="Nova inscrição - DevTech"
+            >
+
+            <div class="btncont">
+
+                <button type="submit" class="btnc" id="btnEnviar">
+                    Confirmar Inscrição
+                </button>
+
+            </div>
+
+        </form>
+
     </div>
-</section>
 
-<div class="form-container">
-    <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech.</p>
+    <footer>
+        © 2026 DevTech
+    </footer>
 
-    <form id="formCadastro">
+    <script>
 
-        <label>Nome completo:</label>
-        <input type="text" name="nome" required>
+        document.addEventListener("DOMContentLoaded", function () {
 
-        <label>Email:</label>
-        <input type="email" name="email" required>
+            const form = document.getElementById("formCadastro");
+            const botao = document.getElementById("btnEnviar");
 
-        <label>Telefone:</label>
-        <input type="tel" name="telefone">
+            form.addEventListener("submit", async function (e) {
 
-        <label>Data de nascimento:</label>
-        <input type="date" name="nascimento">
+                e.preventDefault();
 
-        <label>Área de atuação:</label>
-        <select name="atuacao">
-            <option value="Estudante">Estudante</option>
-            <option value="Desenvolvedor">Desenvolvedor</option>
-            <option value="Profissional de TI">Profissional de TI</option>
-            <option value="Empreendedor">Empreendedor</option>
-            <option value="Outro">Outro</option>
-        </select>
+                botao.disabled = true;
+                botao.innerText = "Enviando...";
 
-        <label>Qual atividade você tem mais interesse?</label>
-        <div class="grupo">
-            <label><input type="radio" name="interesse" value="IA"> Palestras sobre IA</label>
-            <label><input type="radio" name="interesse" value="Mobile"> Workshop Mobile</label>
-            <label><input type="radio" name="interesse" value="Ambos"> Ambos</label>
-        </div>
+                const formData = new FormData(form);
 
-        <label>Como ficou sabendo do evento?</label>
-        <div class="grupo">
-            <label><input type="checkbox" name="fonte[]" value="instagram"> Instagram</label>
-            <label><input type="checkbox" name="fonte[]" value="faculdade"> Faculdade / Escola</label>
-            <label><input type="checkbox" name="fonte[]" value="amigos"> Amigos</label>
-            <label><input type="checkbox" name="fonte[]" value="internet"> Internet</label>
-            <label><input type="checkbox" id="outrosCheck" name="fonte[]" value="outros"> Outros</label>
-        </div>
+                const dados = {
+                    nome: formData.get("nome"),
+                    email: formData.get("email"),
+                    telefone: formData.get("telefone"),
+                    nascimento: formData.get("nascimento") || null,
+                    atuacao: formData.get("atuacao"),
+                    interesse: formData.get("interesse"),
+                    fonte: formData.getAll("fonte[]").join(", "),
+                    fonte_outros: formData.get("fonte_outros"),
+                    outros: formData.get("outros")
+                };
 
-        <input type="text" id="outrosTexto" name="fonte_outros" placeholder="Digite aqui" disabled>
+                try {
 
-        <label>Observações ou expectativas:</label>
-        <textarea name="outros" rows="4"></textarea>
+                    const { error } = await supabaseClient
+                        .from("Cadastro")
+                        .insert([dados]);
 
-        <!-- Config Formspree -->
-        <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
+                    if (error) {
 
-        <div class="btncont">
-            <button type="submit" class="btnc" id="btnEnviar">
-                Confirmar Inscrição
-            </button>
-        </div>
+                        console.error(error);
 
-    </form>
-</div>
+                        let mensagemErro = "Erro ao salvar inscrição.";
 
-<footer>
-    © 2026 DevTech
-</footer>
+                        if (error.message.includes("duplicate key")) {
+                            mensagemErro = "Já existe uma inscrição com este email.";
+                        }
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
+                        alert(mensagemErro);
 
-    const form = document.getElementById("formCadastro");
-    const botao = document.getElementById("btnEnviar");
+                        return;
+                    }
 
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+                    window.location.href = "obrigado.html";
 
-        botao.disabled = true;
-        botao.innerText = "Enviando...";
+                } catch (err) {
 
-        const formData = new FormData(form);
+                    console.error(err);
 
-const dados = {
-    nome: formData.get("nome"),
-    email: formData.get("email"),
-    telefone: formData.get("telefone"),
-    nascimento: formData.get("nascimento") || null,
-    atuacao: formData.get("atuacao"),
-    interesse: formData.get("interesse"),
-    fonte: formData.getAll("fonte[]").join(", "),
-    fonte_outros: formData.get("fonte_outros"),
-    outros: formData.get("outros")
-};
+                    alert("Erro ao salvar no banco.");
 
-        try {
-            const { error } = await supabaseClient
-                .from("Cadastro")
-                .insert([dados]);
+                } finally {
 
-            if (error) {
-    console.error(error);
+                    botao.disabled = false;
+                    botao.innerText = "Confirmar Inscrição";
 
-    let mensagemErro = "Erro ao salvar inscrição.";
+                }
 
-if (error.message.includes("duplicate key")) {
-    mensagemErro = "Já existe uma inscrição com este email.";
-}
+            });
 
-mostrarMensagem(mensagemErro, "erro");
+        });
 
-    return;
-}
-
-            window.location.href = "obrigado.html";
-
-        } catch (err) {
-            console.error(err);
-            alert("Erro ao salvar no banco.");
-        }
-
-        botao.disabled = false;
-        botao.innerText = "Confirmar Inscrição";
-    });
-
-});
-</script>
+    </script>
 
 </body>
 
