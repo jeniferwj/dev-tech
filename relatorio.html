@@ -25,73 +25,50 @@
     </div>
 </section>
 
-<div class="sucesso-container">
+<div class="dashboard-container">
 
-    <h1>Inscritos no Evento</h1>
+    <div class="dashboard-header">
 
-    <table border="1" cellpadding="10">
+        <h2>Dashboard de Inscrições</h2>
 
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th>Área</th>
-            </tr>
-        </thead>
+        <p>
+            Acompanhe os participantes cadastrados no evento DevTech.
+        </p>
 
-        <tbody id="tabelaInscritos"></tbody>
+    </div>
 
-    </table>
+    <div class="cards">
 
-    <script>
+        <div class="card-metrica">
+            <h3 id="totalInscritos">0</h3>
+            <span>Total de inscritos</span>
+        </div>
 
-        const supabaseClient = supabase.createClient(
-            "https://chcshzruympfsqxqzfay.supabase.co",
-            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-        );
+        <div class="card-metrica">
+            <h3 id="totalAreas">0</h3>
+            <span>Áreas diferentes</span>
+        </div>
 
-        async function carregarInscritos() {
+    </div>
 
-            const { data, error } = await supabaseClient
-                .from("Cadastro")
-                .select("*");
+    <div class="tabela-container">
 
-            console.log(data);
-            console.log(error);
+        <table>
 
-            if (error) {
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
 
-                console.error(error);
+            <tbody id="tabelaInscritos"></tbody>
 
-                alert(error.message);
+        </table>
 
-                return;
-            }
-
-            const tabela = document.getElementById("tabelaInscritos");
-
-            tabela.innerHTML = "";
-
-            data.forEach(inscrito => {
-
-                tabela.innerHTML += `
-                    <tr>
-                        <td>${inscrito.nome ?? ""}</td>
-                        <td>${inscrito.email ?? ""}</td>
-                        <td>${inscrito.telefone ?? ""}</td>
-                        <td>${inscrito.atuacao ?? ""}</td>
-                    </tr>
-                `;
-            });
-
-        }
-
-        carregarInscritos();
-
-    </script>
-
-
+    </div>
 
     <a href="index.html" class="btn-voltar">
         Voltar para o início
