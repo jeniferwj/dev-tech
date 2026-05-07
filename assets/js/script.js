@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const telefone = document.getElementById("telefone");
 
+    const interesse = document.getElementById("interesse");
+
+    const data = document.getElementById("data");
+
     const outrosCheck = document.getElementById("outrosCheck");
 
     const outrosTexto = document.getElementById("outrosTexto");
@@ -134,37 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-// ========================================
-// MÁSCARA TELEFONE
-// ========================================
-
-if (telefone) {
-
-    telefone.addEventListener("input", function () {
-
-        let v = telefone.value
-            .replace(/\D/g, "")
-            .slice(0, 11);
-
-        // Coloca DDD
-        v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
-
-        // Celular: 11 dígitos
-        if (v.replace(/\D/g, "").length === 11) {
-            v = v.replace(/(\d{5})(\d{4})$/, "$1-$2");
-        }
-
-        // Fixo: 10 dígitos
-        else {
-            v = v.replace(/(\d{4})(\d{4})$/, "$1-$2");
-        }
-
-        telefone.value = v;
-
-    });
-
-}
 
     // ========================================
     // FORMULÁRIO
