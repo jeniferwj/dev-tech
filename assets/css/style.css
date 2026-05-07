@@ -155,15 +155,17 @@ nav a:hover {
   display: inline-block;
   margin-top: 30px;
   padding: 14px 24px;
-  background: #6c63ff;
+  background: #2E7D32;
   color: white;
   text-decoration: none;
   border-radius: 10px;
   transition: 0.2s;
+  justify-content: center;
 }
 
 .btn-voltar:hover {
-  opacity: 0.9;
+  background: white;
+  color: #1b5e20;
 }
 
 /* =========================
