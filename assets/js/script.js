@@ -20,7 +20,9 @@ function atualizarContador() {
 
     const diferenca = dataEvento - agora;
 
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const dias = Math.floor(
+        diferenca / (1000 * 60 * 60 * 24)
+    );
 
     const horas = Math.floor(
         (diferenca / (1000 * 60 * 60)) % 24
@@ -34,19 +36,23 @@ function atualizarContador() {
         (diferenca / 1000) % 60
     );
 
-    const tempo = document.getElementById("tempo");
+    // verifica se o elemento existe antes de usar
+    let tempo = document.getElementById("tempo");
 
     if (tempo) {
 
-        tempo.innerText =
-            `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+        tempo.innerText = `
+            ${dias} dias,
+            ${horas}h
+            ${minutos}m
+            ${segundos}s
+        `;
     }
 }
 
 setInterval(atualizarContador, 1000);
 
 atualizarContador();
-
 
 // ========================================
 // DOM LOADED
