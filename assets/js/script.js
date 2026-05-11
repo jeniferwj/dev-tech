@@ -7,7 +7,6 @@ const supabaseClient = supabase.createClient(
     "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
 );
 
-
 // ========================================
 // CONTADOR DO EVENTO
 // ========================================
@@ -330,6 +329,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // ========================================
 // CARREGAR INSCRITOS
 // ========================================
+
+if (document.getElementById("tabelaInscritos")) {
+     carregarInscritos();
 
 async function carregarInscritos() {
 
