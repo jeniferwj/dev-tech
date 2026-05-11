@@ -2,17 +2,10 @@
 // CONFIGURAÇÃO SUPABASE (apenas para páginas que precisam)
 // ========================================
 
-let supabaseClient = null;
-try {
-    if (typeof supabase !== 'undefined') {
-        supabaseClient = supabase.createClient(
-            "https://chcshzruympfsqxqzfay.supabase.co",
-            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-        );
-    }
-} catch (e) {
-    console.log("Supabase não disponível nesta página");
-}
+const supabaseClient = supabase.createClient(
+    "https://chcshzruympfsqxqzfay.supabase.co",
+    "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
+);
 
 
 // ========================================
