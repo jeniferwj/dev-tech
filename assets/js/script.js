@@ -1,11 +1,18 @@
 // ========================================
-// CONFIGURAÇÃO SUPABASE
+// CONFIGURAÇÃO SUPABASE (apenas para páginas que precisam)
 // ========================================
 
-const supabaseClient = supabase.createClient(
-    "https://chcshzruympfsqxqzfay.supabase.co",
-    "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
-);
+let supabaseClient = null;
+try {
+    if (typeof supabase !== 'undefined') {
+        supabaseClient = supabase.createClient(
+            "https://chcshzruympfsqxqzfay.supabase.co",
+            "sb_publishable_fvrhSvXEV0KrY1UqWI88kQ_Hcqs5RYT"
+        );
+    }
+} catch (e) {
+    console.log("Supabase não disponível nesta página");
+}
 
 
 // ========================================
@@ -238,12 +245,89 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ========================================
-    // RELATÓRIO
+    // LOGOUT ADMINISTRADOR
     // ========================================
 
-    if (document.getElementById("tabelaInscritos")) {
+    const logoutBtn = document.getElementById("logoutBtn");
 
-        carregarInscritos();
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener("click", function () {
+
+            if (confirm("Tem certeza que deseja sair?")) {
+
+                sessionStorage.removeItem("adminLoggedIn");
+                sessionStorage.removeItem("adminEmail");
+                window.location.href = "index.html";
+
+            }
+
+        });
+
+    }
+
+    // ========================================
+    // MOSTRAR INFO DO ADMINISTRADOR
+    // ========================================
+
+    const adminInfo = document.getElementById("adminInfo");
+
+    if (adminInfo && sessionStorage.getItem("adminLoggedIn") === "true") {
+
+        const adminEmail = sessionStorage.getItem("adminEmail");
+        adminInfo.textContent = `Administrador: ${adminEmail}`;
+
+    }
+
+    // ========================================
+    // LOGIN ADMINISTRADOR
+    // ========================================
+
+    const loginForm = document.getElementById("loginForm");
+    console.log("Form encontrado:", loginForm);
+
+    if (loginForm) {
+
+        loginForm.addEventListener("submit", function (e) {
+            console.log("Form submetido!");
+            e.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            console.log("Usuário digitado:", email);
+            console.log("Senha digitada:", password);
+
+            // Validação simples: usuário "adm" e senha "1234"
+            if (email === "adm" && password === "1234") {
+                console.log("Login válido!");
+                // Login bem-sucedido
+                sessionStorage.setItem("adminLoggedIn", "true");
+                sessionStorage.setItem("adminEmail", email);
+
+                alert("Login realizado com sucesso!");
+                window.location.href = "relatorio.html";
+            } else {
+                console.log("Login inválido!");
+                alert("Usuário ou senha incorretos!");
+            }
+
+        });
+
+    }
+
+    // Esqueci minha senha - mostrar credenciais
+    const forgotPasswordLink = document.getElementById("forgotPassword");
+
+    if (forgotPasswordLink) {
+
+        forgotPasswordLink.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            alert("Credenciais de acesso:\n\nUsuário: adm\nSenha: 1234");
+
+        });
 
     }
 
