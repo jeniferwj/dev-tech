@@ -376,39 +376,6 @@ textarea {
    TABELA
 ========================= */
 
-.tabela-container {
-  overflow-x: auto;
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead {
-  background: #2E7D32;
-  color: white;
-}
-
-th,
-td {
-  padding: 16px;
-  text-align: left;
-}
-
-tbody tr {
-  border-bottom: 1px solid #eee;
-  transition: 0.2s;
-}
-
-tbody tr:hover {
-  background: #f5f7ff;
-}
-
 td input {
 
     width: 100%;
@@ -416,22 +383,23 @@ td input {
     background: transparent;
     font-size: 14px;
     padding: 5px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
 }
 
-td input:disabled {
+td input[readonly] {
 
-    color: #fff;
+    border: none;
+    background: transparent;
     cursor: default;
 }
 
-td input:not(:disabled) {
+td input:not([readonly]) {
 
     background: #fff;
-    color: #000;
+    border: 1px solid #4CAF50;
     border-radius: 6px;
-    border: 1px solid #ccc;
 }
-
 /* =========================
    RODAPÉ
 ========================= */
