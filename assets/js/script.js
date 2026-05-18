@@ -306,27 +306,77 @@ async function carregarInscritos() {
 data.forEach(inscrito => {
 
     tabela.innerHTML += `
-        <tr>
-            <td>${inscrito.nome ?? ""}</td>
-            <td>${inscrito.email ?? ""}</td>
-            <td>${inscrito.telefone ?? ""}</td>
-            <td>${inscrito.atuacao ?? ""}</td>
-            <td>${inscrito.interesse ?? ""}</td>
-            <td>${inscrito.data ?? ""}</td>
+        <tr id="linha-${inscrito.id}">
 
             <td>
-                <button onclick="editarRegistro(${inscrito.id})">
+                <input 
+                    type="text"
+                    value="${inscrito.nome ?? ""}"
+                    id="nome-${inscrito.id}"
+                    disabled
+                >
+            </td>
+
+            <td>
+                <input 
+                    type="email"
+                    value="${inscrito.email ?? ""}"
+                    id="email-${inscrito.id}"
+                    disabled
+                >
+            </td>
+
+            <td>
+                <input 
+                    type="text"
+                    value="${inscrito.telefone ?? ""}"
+                    id="telefone-${inscrito.id}"
+                    disabled
+                >
+            </td>
+
+            <td>
+                <input 
+                    type="text"
+                    value="${inscrito.atuacao ?? ""}"
+                    id="atuacao-${inscrito.id}"
+                    disabled
+                >
+            </td>
+
+            <td>
+                <input 
+                    type="text"
+                    value="${inscrito.interesse ?? ""}"
+                    id="interesse-${inscrito.id}"
+                    disabled
+                >
+            </td>
+
+            <td>
+                ${inscrito.data ?? ""}
+            </td>
+
+            <td>
+
+                <button 
+                    id="btnEditar-${inscrito.id}"
+                    onclick="habilitarEdicao(${inscrito.id})"
+                >
                     Editar
                 </button>
 
-                <button onclick="excluirRegistro(${inscrito.id})">
+                <button 
+                    onclick="excluirRegistro(${inscrito.id})"
+                >
                     Excluir
                 </button>
+
             </td>
+
         </tr>
     `;
 });
-
     const totalInscritos =
         document.getElementById(
             "totalInscritos"
@@ -444,4 +494,105 @@ async function excluirRegistro(id) {
     alert("Registro excluído!");
 
     carregarInscritos();
+}
+
+// ========================================
+// HABILITAR EDIÇÃO
+// ========================================
+
+
+function habilitarEdicao(id) {
+
+    document.getElementById(`nome-${id}`)
+        .disabled = false;
+
+    document.getElementById(`email-${id}`)
+        .disabled = false;
+
+    document.getElementById(`telefone-${id}`)
+        .disabled = false;
+
+    document.getElementById(`atuacao-${id}`)
+        .disabled = false;
+
+    document.getElementById(`interesse-${id}`)
+        .disabled = false;
+
+    const botao =
+        document.getElementById(`btnEditar-${id}`);
+
+    botao.innerText = "Salvar";
+
+    botao.onclick = function () {
+        salvarEdicao(id);
+    };
+}
+
+// ========================================
+// SALVAR
+// ========================================
+
+async function salvarEdicao(id) {
+
+    const nome =
+        document.getElementById(`nome-${id}`).value;
+
+    const email =
+        document.getElementById(`email-${id}`).value;
+
+    const telefone =
+        document.getElementById(`telefone-${id}`).value;
+
+    const atuacao =
+        document.getElementById(`atuacao-${id}`).value;
+
+    const interesse =
+        document.getElementById(`interesse-${id}`).value;
+
+    const { error } =
+        await supabaseClient
+            .from("Cadastro")
+            .update({
+                nome,
+                email,
+                telefone,
+                atuacao,
+                interesse
+            })
+            .eq("id", id);
+
+    if (error) {
+
+        console.error(error);
+        alert("Erro ao atualizar.");
+
+        return;
+    }
+
+    // Desabilita novamente
+    document.getElementById(`nome-${id}`)
+        .disabled = true;
+
+    document.getElementById(`email-${id}`)
+        .disabled = true;
+
+    document.getElementById(`telefone-${id}`)
+        .disabled = true;
+
+    document.getElementById(`atuacao-${id}`)
+        .disabled = true;
+
+    document.getElementById(`interesse-${id}`)
+        .disabled = true;
+
+    const botao =
+        document.getElementById(`btnEditar-${id}`);
+
+    botao.innerText = "Editar";
+
+    botao.onclick = function () {
+        habilitarEdicao(id);
+    };
+
+    alert("Registro atualizado!");
 }

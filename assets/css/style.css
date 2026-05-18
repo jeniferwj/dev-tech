@@ -409,6 +409,29 @@ tbody tr:hover {
   background: #f5f7ff;
 }
 
+td input {
+
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 5px;
+}
+
+td input:disabled {
+
+    color: #fff;
+    cursor: default;
+}
+
+td input:not(:disabled) {
+
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
 /* =========================
    RODAPÉ
 ========================= */
