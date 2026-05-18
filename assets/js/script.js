@@ -303,19 +303,29 @@ async function carregarInscritos() {
 
     tabela.innerHTML = "";
 
-    data.forEach(inscrito => {
+data.forEach(inscrito => {
 
-        tabela.innerHTML += `
-            <tr>
-                <td>${inscrito.nome ?? ""}</td>
-                <td>${inscrito.email ?? ""}</td>
-                <td>${inscrito.telefone ?? ""}</td>
-                <td>${inscrito.atuacao ?? ""}</td>
-                <td>${inscrito.interesse ?? ""}</td>
-                <td>${inscrito.data ?? ""}</td>
-            </tr>
-        `;
-    });
+    tabela.innerHTML += `
+        <tr>
+            <td>${inscrito.nome ?? ""}</td>
+            <td>${inscrito.email ?? ""}</td>
+            <td>${inscrito.telefone ?? ""}</td>
+            <td>${inscrito.atuacao ?? ""}</td>
+            <td>${inscrito.interesse ?? ""}</td>
+            <td>${inscrito.data ?? ""}</td>
+
+            <td>
+                <button onclick="editarRegistro(${inscrito.id})">
+                    Editar
+                </button>
+
+                <button onclick="excluirRegistro(${inscrito.id})">
+                    Excluir
+                </button>
+            </td>
+        </tr>
+    `;
+});
 
     const totalInscritos =
         document.getElementById(
@@ -343,4 +353,95 @@ async function carregarInscritos() {
         totalAreas.innerText =
             areas.length;
     }
+}
+
+// ========================================
+// FUNÇAO PARA EDITAR
+// ========================================
+
+async function editarRegistro(id) {
+
+    // Busca o registro
+    const { data, error } = await supabaseClient
+        .from("Cadastro")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+    if (error) {
+
+        console.error(error);
+        alert("Erro ao buscar registro.");
+
+        return;
+    }
+
+    // Prompt edição
+    const novoNome =
+        prompt("Nome:", data.nome);
+
+    if (novoNome === null) return;
+
+    const novoTelefone =
+        prompt("Telefone:", data.telefone);
+
+    if (novoTelefone === null) return;
+
+    const novaAtuacao =
+        prompt("Área:", data.atuacao);
+
+    if (novaAtuacao === null) return;
+
+    // UPDATE
+    const { error: updateError } =
+        await supabaseClient
+            .from("Cadastro")
+            .update({
+                nome: novoNome,
+                telefone: novoTelefone,
+                atuacao: novaAtuacao
+            })
+            .eq("id", id);
+
+    if (updateError) {
+
+        console.error(updateError);
+        alert("Erro ao atualizar.");
+
+        return;
+    }
+
+    alert("Registro atualizado!");
+
+    carregarInscritos();
+}
+
+// ========================================
+// FUNÇAO PARA EXCLUIR
+// ========================================
+
+
+async function excluirRegistro(id) {
+
+    const confirmar =
+        confirm("Deseja realmente excluir?");
+
+    if (!confirmar) return;
+
+    const { error } = await supabaseClient
+        .from("Cadastro")
+        .delete()
+        .eq("id", id);
+
+    if (error) {
+
+        console.error(error);
+        alert("Erro ao excluir.");
+
+        return;
+    }
+
+    alert("Registro excluído!");
+
+    carregarInscritos();
 }
